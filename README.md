@@ -39,7 +39,9 @@ Stellarator equilibria have been found, however, for which cylindrical coordinat
 In this contribution, we propose an alternative approach for representing the boundary in a fixed-boundary 3D MHD equilibrium solver, moving away from cylindrical coordinates. 
 Instead, we use planar cross-sections whose orientation is determined by a general coordinate frame (G-Frame). This frame is similar to the conventional Frenet frame, but more flexible. 
 As an additional part of the boundary representation, it becomes an input to the equilibrium solve, along with the geometry of the cross-sections.
-We see two advantages: 1) the capability to easily represent configurations where the magnetic axis is highly non-planar or even knotted. 2) a reduction in the degrees of freedom needed for the boundary surface, and thus the equilibrium solver, enabling progress in optimization of these configurations.
+We see two advantages: 
+1. the capability to easily represent configurations where the magnetic axis is highly non-planar or even knotted. 
+2. a reduction in the degrees of freedom needed for the boundary surface, and thus the equilibrium solver, enabling progress in optimization of these configurations.
 
 We discuss the properties of the G-Frame, starting from the conventional Frenet frame. Then we show two exemplary ways of constructing it, first from a NAE solution and also from a given boundary surface. We present the details of the implementation of the new frame in the 3D MHD equilibrium solver GVEC. Furthermore, we demonstrate for a highly shaped QI-optimized stellarator that far fewer degrees of freedom are necessary to find a high quality equilibrium solution, compared to the solution computed in cylindrical coordinates.
 
