@@ -1,4 +1,4 @@
-[![pipeline status](https://gitlab.mpcdf.mpg.de/gvec-group/paper-gvec-g-frame/badges/master/pipeline.svg)](https://gitlab.mpcdf.mpg.de/gvec-group/paper-gvec-g-frame/-/commits/main)
+[![pipeline status](https://gitlab.mpcdf.mpg.de/gvec-group/paper-gvec-g-frame/badges/main/pipeline.svg)](https://gitlab.mpcdf.mpg.de/gvec-group/paper-gvec-g-frame/-/commits/main)
 
 
 
