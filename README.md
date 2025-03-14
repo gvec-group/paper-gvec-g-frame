@@ -12,7 +12,8 @@
 ## Citation
 
 * Published in the Journal "Plasma Physics and Controlled Fusion". 
-* DOI: [10.1088/1361-6587/adba11](https://doi.org/10.1088/1361-6587/adba11)
+* DOI: [10.1088/1361-6587/adba11](https://doi.org/10.1088/1361-6587/adba11)  
+* arXiv preprint: [arXiv:2410.17595](https://arxiv.org/abs/2410.17595)
 * bibtex:
   ```
   @article{Hindenlang_2025,
