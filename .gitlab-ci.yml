@@ -1,0 +1,72 @@
+default:
+  tags:
+    - cloud
+    - docker
+
+# put here the main tex file name, without the .tex ending and the name of the final pdf file:
+variables:
+  TEXPROJECT: Hindenlang_Plunk_Maj_varenna2024_frenet
+  PDFFILENAME: HINDENLANG_PLUNK_MAJ_varenna2024_frenet.pdf 
+
+
+#somehow pdflatex always fails so we return a true. then we check with a python script, and can still ignore errors, then we can check if the pdf is built
+.tmpl_batch_pdflatex:
+  before_script:
+    - ls -l
+    - python3 --version
+  script:
+    - pdflatex -interaction batchmode  ${TEXPROJECT}.tex   || true
+    - bibtex  ${TEXPROJECT}   || true
+    - pdflatex -interaction batchmode  ${TEXPROJECT}.tex   || true
+    - pdflatex -interaction batchmode  ${TEXPROJECT}.tex   || true
+    - ls -l
+    - python3 errcheck_pdflatex_log.py -ignore_errors $IGNORE_ERR  $TEXPROJECT
+    - if [ $IGNORE_ERR = 0 ]; then [ -e $TEXPROJECT.pdf ] ; fi 
+    - if [ -e $TEXPROJECT.pdf ] ; then cp $TEXPROJECT.pdf $PDFFILENAME ;fi  
+
+
+
+
+# run first time pdflatex
+pdflatex_first_run:
+  image: texlive/texlive 
+  variables:
+    IGNORE_ERR: 1
+  extends:
+    - .tmpl_batch_pdflatex
+  artifacts:
+    when: always
+    expire_in: 10 mins
+    paths:
+      - ${TEXPROJECT}*
+  
+
+
+#run second time pdflatex
+pdflatex_final:
+  image: texlive/texlive 
+  variables:
+    IGNORE_ERR: 0
+  needs:
+    - job: pdflatex_first_run
+      artifacts: true
+  extends:
+    - .tmpl_batch_pdflatex
+  artifacts:
+    when: always
+    paths:
+      - $PDFFILENAME
+
+pages:
+  image: 
+    name: pandoc/latex
+    entrypoint: ["/bin/sh", "-c"]
+  script:
+    - mkdir -p html
+    - cp -r pics html/.
+    - pandoc  ${TEXPROJECT}.tex -f latex -t html -s -o html/index.html 
+  publish: html
+  artifacts:
+    paths:
+      - html
+
