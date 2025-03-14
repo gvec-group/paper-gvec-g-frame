@@ -4,7 +4,7 @@
 
 ## Title: Computing MHD equilibria of stellarators with a flexible coordinate frame 
 
-### [ ==> Download pdf <== ](https://gitlab.mpcdf.mpg.de/gvec-group/paper-gvec-g-frame/-/jobs/artifacts/master/raw/HINDENLANG_PLUNK_MAJ_varenna2024_frenet.pdf?job=pdflatex_final)
+### [ ==> Download pdf <== ](https://gitlab.mpcdf.mpg.de/gvec-group/paper-gvec-g-frame/-/jobs/artifacts/main/raw/HINDENLANG_PLUNK_MAJ_varenna2024_frenet.pdf?job=pdflatex_final)
 ### [ ==> experimental html version <== ](https://gvec-group.pages.mpcdf.de/paper-gvec-g-frame)
 
 ## Authors: Florian Hindenlang , Gabriel Plunk , Omar Maj
