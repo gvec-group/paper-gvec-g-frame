@@ -51,7 +51,6 @@ https://doi.org/10.5281/zenodo.14714598
 ## Acknowledgements
 Thanks to the co-authors and: 
 
-Robert Babin, Carolin Nuehrenberg ,  Tiago Ribeiro , Robert Köberl , Alan Goodman ,
-Katia Camacho , Matt Landreman 
+Robert Babin, Carolin Nuehrenberg,  Tiago Ribeiro, Robert Köberl, Alan Goodman, Katia Camacho, Matt Landreman 
 
 
